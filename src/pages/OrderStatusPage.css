@@ -1,0 +1,282 @@
+.order-status-page {
+  display: flex;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* =========================
+   Main Content
+========================= */
+
+.order-status-content {
+  flex: 1;
+  padding: 40px;
+  min-width: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   Card
+========================= */
+
+.order-status-card {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 24px;
+  padding: 80px;
+  gap: 48px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+/* =========================
+   Header
+========================= */
+
+.order-status-header {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.order-status-header h1 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(21px, 3.5vw, 32px);
+  font-weight: 700;
+  color: #000000;
+}
+
+.back-btn {
+  position: absolute;
+  left: 0;
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  color: #666;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  color: #111;
+}
+
+/* =========================
+   Steps
+========================= */
+
+.status-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =========================
+   Single Step
+========================= */
+
+.status-step {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* =========================
+   Step Box
+========================= */
+
+.status-step-box {
+  flex: 1;
+  min-width: 0;
+
+  height: 52px;
+
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 14px;
+
+  transition: 0.2s;
+}
+
+/* Completed */
+
+.status-step.completed .status-step-box {
+  background: #f1eafb;
+}
+
+/* Not completed */
+
+.status-step.not-completed .status-step-box {
+  background: #e3e3e3;
+}
+
+/* =========================
+   Icon
+========================= */
+
+.status-icon {
+  width: 30px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+}
+
+.status-step.completed .status-icon {
+  color: #684095;
+}
+
+.status-step.not-completed .status-icon {
+  color: #666;
+}
+
+/* =========================
+   Text
+========================= */
+
+.status-text {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 8px;
+  min-width: 0;
+
+  line-height: 1.1;
+}
+
+.status-text span {
+  font-size: 14px;
+  color: #333;
+}
+
+.status-text strong {
+  font-size: 14px;
+  color: #111;
+  margin-top: 2px;
+}
+
+/* =========================
+   Check Badge
+========================= */
+
+.status-check {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  flex-shrink: 0;
+}
+
+.status-step.completed .status-check {
+  color: #684095;
+}
+
+.status-step.not-completed .status-check {
+  color: #cfcfcf;
+}
+
+/* =========================
+   Loading
+========================= */
+
+.order-status-loading {
+  text-align: center;
+  margin-top: 150px;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+/* Sidebar becomes a horizontal top bar below this width
+   (see ProfileSidebar.css), so the page needs to stack too. */
+@media (max-width: 900px) {
+  .order-status-page {
+    flex-direction: column;
+  }
+
+  .order-status-content {
+    margin-left: 0;
+    padding: 25px 20px;
+  }
+
+  .order-status-card {
+    max-width: 520px;
+    padding: 35px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .order-status-content {
+    padding: 20px 15px;
+  }
+
+  .order-status-card {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .status-step {
+    gap: 10px;
+  }
+
+  .status-step-box {
+    height: 50px;
+  }
+
+  .status-check {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 380px) {
+  .order-status-card {
+    padding: 22px 14px;
+  }
+
+  .status-icon {
+    width: 22px;
+    font-size: 16px;
+  }
+
+  .status-text span,
+  .status-text strong {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,722 @@
+.checkout-page {
+  max-width: 900px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.checkout-page h1 {
+  margin: 0 0 24px;
+  color: #1a1515;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* ================= Step Indicator ================= */
+
+.checkout-steps-card {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.checkout-steps {
+  display: flex;
+  align-items: center;
+}
+
+.checkout-step-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.checkout-step-wrapper:last-child {
+  flex: 0 0 auto;
+}
+
+.checkout-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.checkout-step-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eeeeee;
+  color: #969696;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: 0.2s;
+}
+
+.checkout-step-circle.current {
+  background: #6f4eab;
+  color: #ffffff;
+}
+
+.checkout-step-circle.done {
+  background: #1a1515;
+  color: #ffffff;
+}
+
+.checkout-step-label {
+  font-size: 14px;
+  color: #969696;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.checkout-step-label.current {
+  color: #1a1515;
+  font-weight: 700;
+}
+
+.checkout-step-connector {
+  flex: 1;
+  height: 1px;
+  background: #e3d9f1;
+  margin: 0 14px;
+  min-width: 20px;
+}
+
+/* ================= Content Card ================= */
+
+.checkout-content-card {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 28px 26px;
+  box-sizing: border-box;
+}
+
+.checkout-step-panel h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1515;
+  margin: 0 0 18px;
+}
+
+.checkout-empty-note {
+  color: #969696;
+  font-size: 13px;
+  margin: 0 0 16px;
+}
+
+/* ================= Address List ================= */
+
+.address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.address-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px 18px;
+  transition: 0.2s;
+}
+
+.address-card.active {
+  border-color: #6f4eab;
+  background: #faf7ff;
+}
+
+.address-radio {
+  border: none;
+  background: none;
+  padding: 3px 0 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.radio-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  transition: 0.2s;
+}
+
+.radio-dot.checked {
+  border-color: #6f4eab;
+}
+
+.radio-dot.checked::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #6f4eab;
+}
+
+.address-details {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.address-details h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1515;
+}
+
+.address-details p {
+  margin: 2px 0;
+  font-size: 13px;
+  color: #666666;
+}
+
+.default-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #f6f2fb;
+  color: #6f4eab;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.address-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.address-icon-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #666666;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.address-icon-btn:hover {
+  border-color: #6f4eab;
+  color: #6f4eab;
+}
+
+.address-icon-btn.danger:hover {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.add-address-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: none;
+  color: #6f4eab;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.add-address-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= Address Form ================= */
+
+.address-form {
+  margin-top: 6px;
+  padding: 18px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.address-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.address-form-grid .span-2 {
+  grid-column: 1 / -1;
+}
+
+.address-form h4 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1515;
+}
+
+.address-option-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #1a1515;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+
+.address-option-btn:hover:not(:disabled) {
+  border-color: #6f4eab;
+  color: #6f4eab;
+}
+
+.address-option-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.manual-address-fields {
+  margin-top: 10px;
+}
+
+/* ================= Manual Address / Location Confirm Panel ================= */
+
+.manual-address-panel {
+  margin-top: 10px;
+  background: #f6f2fb;
+  border: 1px solid #e3d9f1;
+  border-radius: 12px;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.manual-address-panel h4 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1515;
+}
+
+.panel-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #fafafa;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #333;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.panel-input:focus {
+  outline: 1px solid #6f4eab;
+}
+
+.panel-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.panel-input-row .panel-input {
+  margin-bottom: 0;
+}
+
+.manual-address-panel .address-default-check {
+  margin: 4px 0 16px;
+}
+
+.confirm-address-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: #8f74b8;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.confirm-address-btn:hover:not(:disabled) {
+  background: #6f4eab;
+}
+
+.confirm-address-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.location-captured-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #3ac569;
+  font-weight: 600;
+}
+
+.address-form input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.address-form input:focus {
+  border-color: #6f4eab;
+}
+
+.address-default-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+}
+
+.address-default-check input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  accent-color: #6f4eab;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* ================= Delivery / Payment List ================= */
+
+.delivery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.delivery-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delivery-card .radio-dot {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.delivery-card.active {
+  border-color: #6f4eab;
+  background: #faf7ff;
+}
+
+.delivery-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.delivery-details h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1515;
+}
+
+.delivery-details p {
+  margin: 2px 0;
+  font-size: 13px;
+  color: #969696;
+}
+
+.delivery-card.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.delivery-card.disabled .radio-dot {
+  border-color: #e0e0e0;
+}
+
+.coming-soon-badge {
+  flex-shrink: 0;
+  align-self: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #f3f3f3;
+  color: #969696;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ================= Review Step ================= */
+
+.review-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.review-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.review-item-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #f5f5f5;
+}
+
+.review-item-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.review-item-details h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1515;
+}
+
+.review-item-details p {
+  margin: 2px 0;
+  font-size: 12px;
+  color: #969696;
+}
+
+.review-item-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1515;
+}
+
+.review-totals {
+  padding: 16px 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 18px;
+}
+
+.review-totals-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #666666;
+  padding: 4px 0;
+}
+
+.review-totals-final {
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1515;
+}
+
+.review-totals-final span:last-child {
+  color: #6f4eab;
+}
+
+.review-delivery-info {
+  background: #f6f2fb;
+  border: 1px solid #e3d9f1;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+}
+
+.review-delivery-info h4 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1515;
+}
+
+.review-delivery-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: #666666;
+  padding: 4px 0;
+}
+
+.review-delivery-row span:first-child {
+  flex-shrink: 0;
+}
+
+.review-delivery-row span:last-child {
+  text-align: right;
+  color: #1a1515;
+  font-weight: 600;
+}
+
+.review-confirm-note {
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 24px 18px;
+}
+
+.review-confirm-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #6f4eab;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.review-confirm-note h4 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1515;
+}
+
+.review-confirm-note p {
+  margin: 0;
+  font-size: 12px;
+  color: #969696;
+}
+
+/* ================= Nav Buttons ================= */
+
+.checkout-nav-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.checkout-back-btn {
+  flex: 0 0 200px;
+  padding: 14px;
+  border: 1px solid #e3d9f1;
+  border-radius: 10px;
+  background: #f6f2fb;
+  color: #1a1515;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.checkout-back-btn:hover {
+  background: #ece3f7;
+}
+
+.checkout-continue-btn {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #6f4eab;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.checkout-continue-btn:hover:not(:disabled) {
+  background: #5b3f8e;
+}
+
+.checkout-continue-btn:disabled {
+  background: #b7a4d6;
+  cursor: not-allowed;
+}
+
+/* ================= Loading ================= */
+
+.loading {
+  text-align: center;
+  margin-top: 180px;
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 700px) {
+  .checkout-page {
+    margin-top: 100px;
+  }
+
+  .checkout-step-label {
+    display: none;
+  }
+
+  .address-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-nav-buttons {
+    flex-direction: column;
+  }
+
+  .checkout-back-btn {
+    flex: none;
+  }
+}

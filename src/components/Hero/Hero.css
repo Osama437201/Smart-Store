@@ -1,0 +1,290 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  padding: 0 120px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+.hero-dots {
+  position: absolute;
+  width: 100px;
+  height: 60px;
+  background-image: radial-gradient(#ffffff 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hero-dots-top {
+  top: 40px;
+  left: 40px;
+}
+
+.hero-dots-bottom {
+  bottom: 100px;
+  right: 60px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+
+  max-width: 480px;
+  width: 100%;
+}
+
+.hero-title {
+  width: 100%;
+  max-width: 423px;
+  height: auto;
+  margin: 0;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(26px, 4.5vw, 40px);
+  line-height: 1.35;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.hero-description {
+  width: 100%;
+  max-width: 306px;
+  height: auto;
+  margin: 0;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.7;
+  letter-spacing: 0;
+  color: #1a1515;
+}
+
+.hero-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 240px;
+  height: 56px;
+  padding: 10px;
+  gap: 8px;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+
+  background-color: #5d3a82;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: #4a2e68;
+}
+
+.hero-btn-text {
+  width: auto;
+  height: auto;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.chat-btn {
+  position: absolute;
+  bottom: 100px; /* 👈 بدل top: 40% */
+  right: 60px;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  border: none;
+
+  background-color: #5d3a82;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.chat-btn:hover {
+  transform: scale(1.05);
+}
+
+.hero-curve {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 0 40px;
+    min-height: 680px;
+  }
+
+  .hero-overlay {
+    width: 500px;
+    height: 480px;
+  }
+}
+
+/* Small tablet / large phone */
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 24px;
+    min-height: 620px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-overlay {
+    width: 380px;
+    height: 380px;
+    top: 100px;
+  }
+
+  .hero-dots {
+    width: 70px;
+    height: 44px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero {
+    padding: 0 20px;
+    min-height: 560px;
+  }
+
+  .hero-title {
+    max-width: 100%;
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .hero-description {
+    max-width: 100%;
+  }
+
+  .hero-btn {
+    max-width: 100%;
+  }
+
+  .chat-btn {
+    right: 20px;
+    bottom: 90px;
+  }
+
+  .hero-overlay {
+    width: 300px;
+    height: 300px;
+    top: 60px;
+  }
+
+  .hero-dots-top {
+    top: 20px;
+    left: 20px;
+  }
+
+  .hero-dots-bottom {
+    bottom: 80px;
+    right: 30px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  .hero {
+    padding: 0 16px;
+    min-height: 520px;
+  }
+
+  .hero-content {
+    gap: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(22px, 8vw, 26px);
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .hero-btn {
+    height: 48px;
+  }
+
+  .chat-btn {
+    width: 48px;
+    height: 48px;
+    right: 16px;
+    bottom: 80px;
+  }
+
+  .chat-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hero-dots {
+    display: none;
+  }
+}
+.hero-overlay {
+  position: absolute;
+  top: 162px;
+  left: 0;
+  z-index: 1;
+
+  width: 685px;
+  height: 638px;
+  border-top-right-radius: 500px;
+
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.75) 35%,
+    rgba(255, 255, 255, 0.35) 60%,
+    rgba(255, 255, 255, 0) 85%
+  );
+
+  filter: blur(30px);
+  pointer-events: none;
+}

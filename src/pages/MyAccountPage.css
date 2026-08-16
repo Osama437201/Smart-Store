@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.myaccount-page {
+  width: 100%;
+  display: flex;
+  background: #f7f7fb;
+  min-height: 100vh;
+}
+
+.profile-content {
+  flex: 1;
+  min-width: 0;
+  padding: 36px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 75px;
+}
+
+/* Frame 30235 — main profile card */
+.profile-card {
+  width: 100%;
+  max-width: 680px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e5e5e5;
+  padding: 36px 40px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* image — 80x80, fully rounded */
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #5d3a82, #f3eefb);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Text "Danial Joe" */
+.profile-header h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: #1a1515;
+  margin: 0;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Text "Danial Joe@email.com" */
+.profile-header p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #666666;
+  margin: 0;
+  text-align: center;
+  word-break: break-word;
+}
+
+.profile-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 18px;
+  width: 100%;
+}
+
+/* Frame 30183 — Text form field */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+.form-group.full {
+  grid-column: 1 / 3;
+}
+
+/* label text (Full Name / Phone number / Email) */
+.form-group label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #1a1515;
+  margin: 0;
+}
+
+/* button/input container */
+.form-group input {
+  height: 42px;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #f9fafa;
+  padding: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #666666;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #5d3a82;
+}
+
+.edit-btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Edit Profile button */
+.edit-profile-btn {
+  width: 150px;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  background: #5d3a82;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.edit-profile-btn:hover {
+  background: #4b2d6e;
+}
+
+.profile-loading {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Sidebar switches to a horizontal top bar below this width (see
+   ProfileSidebar.css), so the page needs to stack vertically too. */
+@media (max-width: 900px) {
+  .myaccount-page {
+    flex-direction: column;
+  }
+
+  .profile-content {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .profile-content {
+    padding: 20px;
+  }
+
+  .profile-card {
+    width: 100%;
+    padding: 40px;
+    gap: 32px;
+  }
+
+  .profile-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: auto;
+  }
+
+  .edit-btn-wrap {
+    justify-content: center;
+  }
+
+  .edit-profile-btn {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .profile-card {
+    padding: 24px;
+  }
+
+  .profile-header h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .profile-header p {
+    font-size: 15px;
+  }
+
+  .profile-image,
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-avatar {
+    font-size: 30px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .profile-content {
+    padding: 12px;
+  }
+
+  .profile-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+}

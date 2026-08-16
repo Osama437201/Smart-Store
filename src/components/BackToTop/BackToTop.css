@@ -1,0 +1,35 @@
+.back-to-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 48px;
+  padding: 16px clamp(16px, 10vw, 666px);
+  gap: 10px;
+  box-sizing: border-box;
+
+  background-color: #f3eefb;
+  cursor: pointer;
+}
+
+.back-to-top-text {
+  width: auto;
+  height: auto;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0;
+  color: #5d3a82;
+
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.back-to-top:hover .back-to-top-text {
+  color: #4a2e68;
+}

@@ -1,0 +1,156 @@
+.products-page{
+    width: 90%;
+    margin: 30px auto 50px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 30px;
+}
+
+.sidebar{
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    height: fit-content;
+}
+
+.products-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;
+}
+.products-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom:25px;
+}
+
+.products-header h2{
+    font-size:32px;
+}
+
+.products-header p{
+    color:#777;
+}
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.pagination-arrow {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pagination-arrow:hover:not(:disabled) {
+  border-color: #6f4eab;
+  color: #6f4eab;
+}
+
+.pagination-arrow:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-number {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pagination-number:hover {
+  background: #f6f2fb;
+}
+
+.pagination-number.active {
+  background: #6f4eab;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pagination-dots {
+  width: 20px;
+  text-align: center;
+  color: #999;
+}
+
+/* ===== Responsive ===== */
+
+/* Tablet: drop products grid to 2 columns, keep sidebar column but narrower */
+@media (max-width: 1024px) {
+  .products-page {
+    grid-template-columns: 220px 1fr;
+    gap: 20px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small tablet / large phone: stack sidebar above the products list */
+@media (max-width: 768px) {
+  .products-page {
+    width: 92%;
+    grid-template-columns: 1fr;
+    margin: 20px auto 40px;
+  }
+
+  .sidebar {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .products-header h2 {
+    font-size: 26px;
+  }
+}
+
+/* Mobile: single column product cards */
+@media (max-width: 640px) {
+  .products-page {
+    width: 94%;
+    gap: 16px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .products-header h2 {
+    font-size: 22px;
+  }
+
+  .pagination-arrow,
+  .pagination-number {
+    width: 32px;
+    height: 32px;
+  }
+}

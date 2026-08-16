@@ -1,0 +1,213 @@
+/* Frame "dashboard" — sidebar container */
+.profile-sidebar {
+  width: 256px;
+  min-height: calc(100vh - 80px);
+  background: #ffffff;
+  border-right: 1px solid #e5e5e5;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 80px;
+  align-self: stretch;
+  box-shadow: 0px 0px 4px 0px #00000040;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Hamburger bar — hidden on desktop, shown only ≤900px */
+.sidebar-mobile-header {
+  display: none;
+}
+
+.sidebar-mobile-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1a1515;
+}
+
+.sidebar-toggle-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1515;
+  cursor: pointer;
+}
+
+/* On desktop this just fills the sidebar and pins logout to the
+   bottom via space-between, same as before. On mobile it becomes
+   the collapsible dropdown panel (see media query). */
+.sidebar-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 85px;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+}
+
+/* "profile" item — reused for every nav link, active state applies
+   automatically to whichever page is currently open (NavLink), not fixed
+   to a single item */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: #1a1515;
+  cursor: pointer;
+  transition: .25s;
+  white-space: nowrap;
+}
+
+.sidebar-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.sidebar-item:hover {
+  background: #f3eefb;
+  color: #5d3a82;
+}
+
+.sidebar-item.active {
+  background: #f3eefb;
+  color: #5d3a82;
+}
+
+/* Frame 30229 — Become a Seller button */
+.seller-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 11px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #2861ab, #5d3a82);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: .25s;
+  margin-top: 26px;
+  white-space: nowrap;
+}
+
+.seller-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.seller-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* "logout" item — pinned to the very bottom of the sidebar via
+   justify-content: space-between on .sidebar-panel */
+.logout-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #d32f2f;
+  cursor: pointer;
+  transition: .25s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.logout-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.logout-item:hover {
+  background: #fdecea;
+}
+
+@media (max-width: 900px) {
+
+  .profile-sidebar {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    position: static;
+    flex-direction: column;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 14px 16px;
+  }
+
+  .sidebar-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Collapsed by default; toggled open via the .open class from JS */
+  .sidebar-panel {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: none;
+    gap: 18px;
+    margin-top: 16px;
+  }
+
+  .sidebar-panel.open {
+    display: flex;
+  }
+
+  .sidebar-links {
+    flex-direction: column;
+    margin-top: 0;
+    gap: 6px;
+  }
+
+  .sidebar-item,
+  .seller-btn,
+  .logout-item {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .seller-btn {
+    margin-top: 6px;
+  }
+
+}

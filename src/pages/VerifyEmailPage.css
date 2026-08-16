@@ -1,0 +1,132 @@
+.verify-form-side {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #fff;
+}
+
+.verify-back-btn {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #f2eefb;
+  color: #6b3fa0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.verify-back-btn:hover {
+  background: #e5dbf6;
+}
+
+.verify-content {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.verify-logo {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.verify-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #1a1a1a;
+}
+
+.verify-subtitle {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5;
+  margin: 0 0 24px;
+}
+
+.verify-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.verify-label {
+  align-self: flex-start;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.verify-otp-wrap {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.verify-otp-input {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+  background: #faf9fc;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.verify-otp-input:focus {
+  border-color: #6b3fa0;
+  box-shadow: 0 0 0 3px rgba(107, 63, 160, 0.15);
+}
+
+.verify-btn {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.verify-resend-text {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #777;
+}
+
+.verify-resend-link {
+  border: none;
+  background: none;
+  padding: 0;
+  color: #6b3fa0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.verify-resend-link:hover {
+  text-decoration: underline;
+}
+
+.verify-resend-timer {
+  color: #999;
+  font-weight: 600;
+}

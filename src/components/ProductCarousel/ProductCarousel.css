@@ -1,0 +1,344 @@
+.top-selling {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: auto;
+  padding: clamp(32px, 6vw, 80px) clamp(16px, 8vw, 120px);
+  gap: clamp(24px, 4vw, 48px);
+  box-sizing: border-box;
+}
+
+.top-selling-title {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: 0;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(20px, 3vw, 32px);
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-align: center;
+  color: #1a1515;
+}
+
+.top-selling-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ===== Carousel track ===== */
+.top-selling-track {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: clamp(12px, 2vw, 24px);
+  padding: 0 2px;
+
+  height: auto;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+}
+.top-selling-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== Arrows ===== */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: clamp(28px, 4vw, 36px);
+  height: clamp(28px, 4vw, 36px);
+  border-radius: 999px;
+  border: none;
+  flex-shrink: 0;
+
+  background-color: #f3eefb;
+  cursor: pointer;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-arrow-left {
+  left: -14px;
+}
+
+.carousel-arrow-right {
+  right: -14px;
+}
+
+@media (min-width: 900px) {
+  .carousel-arrow-left {
+    left: -50px;
+  }
+  .carousel-arrow-right {
+    right: -50px;
+  }
+}
+
+/* ===== Product card ===== */
+.product-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: clamp(160px, 42vw, 280px);
+  height: auto;
+  min-height: 340px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(14px, 2vw, 24px) clamp(14px, 2vw, 24px) 16px;
+
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .product-card {
+    width: clamp(200px, 30vw, 280px);
+  }
+}
+
+.product-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 232 / 240;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f3eefb;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.product-favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  flex-shrink: 0;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.product-hover-actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* On touch devices there's no hover, so keep actions reachable via focus/tap */
+.product-image-wrap:hover .product-hover-actions,
+.product-image-wrap:focus-within .product-hover-actions {
+  opacity: 1;
+}
+
+.product-btn {
+  width: 100%;
+  max-width: 160px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: none;
+
+  background-color: #1a1515;
+  color: #ffffff;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(12px, 2vw, 14px);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.product-btn:hover {
+  background-color: #5d3a82;
+}
+
+/* ===== Title ===== */
+.product-title {
+  width: 100%;
+  height: auto;
+  margin: 0;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(13px, 2.2vw, 16px);
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-align: center;
+  color: #1a1515;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===== Price row ===== */
+.product-price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-price {
+  width: auto;
+  height: auto;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(13px, 2.2vw, 16px);
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #1a1515;
+}
+
+.product-old-price {
+  width: auto;
+  height: auto;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(13px, 2.2vw, 16px);
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-decoration: line-through;
+  color: #969696;
+}
+
+/* ===== Rating row ===== */
+.product-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.product-stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  height: 16px;
+  gap: 4px;
+}
+
+.product-rating-value {
+  width: auto;
+  height: auto;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #666666;
+}
+
+/* ===== Color swatches ===== */
+.product-colors {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 16px;
+  gap: 8px;
+}
+
+.product-color-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 1px solid #e5e5e5;
+  flex-shrink: 0;
+}
+
+/* ===== Responsive breakpoints ===== */
+@media (max-width: 1280px) {
+  .top-selling-title,
+  .top-selling-carousel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-selling {
+    padding: 40px 16px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .top-selling {
+    padding: 32px 12px;
+  }
+
+  /* Stack cards vertically instead of a horizontal-scroll carousel */
+  .top-selling-track {
+    flex-direction: column;
+    align-items: stretch;
+    overflow-x: visible;
+    height: auto;
+  }
+
+  .product-card {
+    width: 100%;
+    min-height: auto;
+  }
+
+  /* Arrows only make sense for horizontal scrolling */
+  .carousel-arrow {
+    display: none;
+  }
+}
