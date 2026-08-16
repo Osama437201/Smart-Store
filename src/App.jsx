@@ -33,7 +33,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import SignUpPage from "./pages/SignUpPage.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
 import VerifyEmailPage from "./pages/VerifyEmailPage.jsx";
-import EditAddressPage from "./pages/Editaddresspage.jsx";
+import EditAddressPage from "./pages/EditAddressPage.jsx";
 import HelpSupportPage from "./pages/Helpsupportpage.jsx";
 import ContactUsPage from "./pages/ContactUsPage.jsx";
 
